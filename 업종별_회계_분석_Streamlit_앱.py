@@ -7,14 +7,16 @@ import urllib.request
 import os
 
 # ✅ 한글 폰트 (NanumGothic) 다운로드 및 설정
-font_url = "https://github.com/naver/nanumfont/blob/master/ttf/NanumGothic.ttf?raw=true"
-font_path = "/tmp/NanumGothic.ttf"
+font_url = "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2107@1.1/NanumSquareNeo-aLt.ttf"
+font_path = "/tmp/NanumSquareNeo-aLt.ttf"
+
 if not os.path.exists(font_path):
     urllib.request.urlretrieve(font_url, font_path)
 
 font_prop = fm.FontProperties(fname=font_path)
 plt.rcParams['font.family'] = font_prop.get_name()
 plt.rcParams['axes.unicode_minus'] = False
+
 
 # ✅ 데이터 불러오기
 df = pd.read_csv("업종별회계.csv")

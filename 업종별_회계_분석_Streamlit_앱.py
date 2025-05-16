@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import matplotlib.ticker as ticker
 import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
 import urllib.request

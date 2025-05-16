@@ -1,21 +1,24 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
-import matplotlib.ticker as ticker
 import matplotlib.font_manager as fm
 import urllib.request
 import os
 
-# ✅ 한글 폰트 (NanumGothic) 다운로드 및 설정
-font_url = "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2107@1.1/NanumSquareNeo-aLt.ttf"
-font_path = "/tmp/NanumSquareNeo-aLt.ttf"
+# 나눔고딕 다운로드 및 적용
+font_url = "https://github.com/park1200656/fonts/blob/main/NanumGothic.ttf?raw=true"
+font_path = "/tmp/NanumGothic.ttf"
 
-if not os.path.exists(font_path):
-    urllib.request.urlretrieve(font_url, font_path)
+try:
+    if not os.path.exists(font_path):
+        urllib.request.urlretrieve(font_url, font_path)
 
-font_prop = fm.FontProperties(fname=font_path)
-plt.rcParams['font.family'] = font_prop.get_name()
-plt.rcParams['axes.unicode_minus'] = False
+    font_prop = fm.FontProperties(fname=font_path)
+    plt.rcParams['font.family'] = font_prop.get_name()
+    plt.rcParams['axes.unicode_minus'] = False
+except Exception as e:
+    print("폰트 다운로드 실패:", e)
+    plt.rcParams['font.family'] = 'sans-serif'
 
 
 # ✅ 데이터 불러오기

@@ -1,21 +1,6 @@
 import streamlit as st
 import pandas as pd
 
-import streamlit as st
-import pandas as pd
-
-# ✅ 배경색 흰색으로 설정
-st.markdown(
-    """
-    <style>
-    .stApp {
-        background-color: white;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
 # ✅ 나머지 앱 코드...
 st.title("📊 업종별 수익·비용·이익 추이 분석 대시보드")
 ...

@@ -1,11 +1,6 @@
 import streamlit as st
 import pandas as pd
 
-# ✅ 나머지 앱 코드...
-st.title("📊 업종별 수익·비용·이익 추이 분석 대시보드")
-...
-
-
 # ✅ 데이터 불러오기
 df = pd.read_csv("업종별회계.csv")
 
@@ -18,7 +13,7 @@ df_melted = df.melt(id_vars=["업종", "항목"], var_name="Year", value_name="A
 df_melted["Year"] = df_melted["Year"].astype(str)
 
 # ✅ 페이지 제목
-st.title("📊 업종별 수익·비용·이익 추이 분석 대시보드")
+st.title("📊 업종별 수익·비용·이익 추이 분석 대시보드(1000원)")
 
 # ✅ 업종 선택
 selected_industry = st.selectbox("업종 선택", df["업종"].unique())

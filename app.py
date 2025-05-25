@@ -4,7 +4,7 @@ import plotly.express as px
 import altair as alt
 
 # CSV 파일 불러오기
-df = pd.read_csv("회계년도통합.csv", encoding="utf-8-sig")
+df = st.file_uploader("CSV 파일 업로드", type="csv")
 df = df.drop(columns=["Unnamed: 0"], errors="ignore")
 df["년도"] = df["년도"].astype(str)
 
